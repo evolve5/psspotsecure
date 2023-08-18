@@ -1,0 +1,16 @@
+<?php
+$filename = 'log.txt';
+
+// Get file permissions using stat
+$file_info = stat($filename);
+
+// Extract file permissions from the file info
+$permissions = $file_info['mode'];
+
+// Convert numeric permissions to the corresponding octal representation
+$octal_permissions = substr(sprintf('%o', $permissions), -4);
+
+echo "File Permissions: $octal_permissions";
+?>
+
+
